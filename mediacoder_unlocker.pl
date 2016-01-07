@@ -1,6 +1,5 @@
 #!perl -w
-    
-use Data::Dumper;
+
 use strict;
 
 use Win32::GuiTest qw(:ALL);
