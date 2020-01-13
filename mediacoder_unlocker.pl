@@ -1,7 +1,6 @@
 #!perl -w
 
 use strict;
-
 use Win32::GuiTest qw(:ALL);
 my $mediacoderWindowsDonationId;
 
@@ -26,7 +25,6 @@ if ($answer eq '') {
   print "Result is $answer\n";
 }
 
-
 my @coords = GetWindowRect($mediacoderWindowsDonationId);
 
 # set focus on window
@@ -37,10 +35,8 @@ MouseMoveAbsPix($coords[0] + 360, $coords[1] + 243);
 SendLButtonDown(); SendLButtonUp();
 # send result
 SendKeys($answer);
-# send mouse to continue button
-MouseMoveAbsPix($coords[0] + 348, $coords[1] + 280);
-# click
-SendLButtonDown(); SendLButtonUp();
+# click on "Continue" button
+PushChildButton($mediacoderWindowsDonationId,'Continue');
 
 # loop
 sleep(10);
